@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: tabla-indoita
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: echo gata
+    startCommand: node server.js
+    healthCheckPath: /health

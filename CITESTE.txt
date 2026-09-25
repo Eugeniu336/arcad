@@ -1,0 +1,47 @@
+TABLĂ ÎNDOITĂ — joc pe rețea locală
+===================================
+
+Ce e în folder
+  index.html               jocul
+  server.js                serverul (fără alte programe de instalat, doar Node.js)
+  start-windows.bat        pornire cu dublu-click pe Windows
+  start-mac-linux.command  pornire pe Mac / Linux
+  package.json, render.yaml  pentru cine vrea să-l pună pe internet (Render)
+
+1. O singură dată: instalează Node.js
+   Descarcă varianta LTS de pe https://nodejs.org și instalează-o.
+
+2. Pornește serverul pe un calculator conectat la aceeași rețea Wi-Fi ca telefoanele
+   Windows: dublu-click pe start-windows.bat
+   Mac/Linux: dublu-click pe start-mac-linux.command (sau în terminal: node server.js)
+   Dacă Windows întreabă de firewall, apasă „Permite acces” (rețele private).
+
+   În fereastră apare un link de forma:
+      http://192.168.1.25:8080
+   Acela e IP-ul calculatorului în rețeaua voastră.
+
+3. Joacă
+   Pe primul telefon deschide linkul, apasă „Creează joc și primește link”.
+   Trimite linkul de invitație (conține IP-ul și codul) celuilalt telefon, sau spune-i codul.
+   Când se conectează, apasă „Pornește derby-ul”.
+   Sus pe ecran scrie „ONLINE · rețea locală” și întârzierea în ms.
+
+   Nu e nevoie de internet: totul merge prin routerul de acasă.
+   Lasă fereastra serverului deschisă cât jucați.
+
+Control
+  Telefon, mod „Butoane”: ◀ ▶ volan, ▲ accelerație, ▼ frână / înapoi, fulgerul = nitro.
+    Cât ții degetul, volanul rămâne virat. Poți glisa degetul direct de pe ◀ pe ▶.
+  Telefon, mod „Joystick”: tragi cu degetul spre unde vrei să meargă mașina.
+  Tastatură: W înainte, S frână / înapoi, A stânga, D dreapta, Shift sau Space nitro.
+    Direcțiile sunt ale mașinii, nu ale ecranului: W e mereu „înainte”, oriunde ar fi îndreptată.
+    Al doilea jucător pe aceeași tastatură: săgețile + Enter.
+
+Dacă nu merge
+  „Nu mă pot conecta la serverul jocului”: verifică să fie fereastra serverului deschisă
+    și telefonul în aceeași rețea Wi-Fi (nu pe date mobile).
+  Pagina nu se deschide deloc pe telefon: firewall-ul calculatorului blochează portul 8080.
+    Permite Node.js în firewall pentru rețele private.
+  Wi-Fi pentru oaspeți: unele routere izolează dispozitivele între ele. Folosește rețeaua principală.
+
+Alt port: setează variabila PORT, de ex. în terminal:  PORT=9000 node server.js
